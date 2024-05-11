@@ -1,0 +1,43 @@
+#include <AFMotor.h>
+
+// Define motor1 connected to connection 1
+AF_DCMotor motor1(1); 
+
+// Define motor2 connected to connection 4
+AF_DCMotor motor2(4); 
+ 
+void setup()
+{
+  // Set the maximum speed for motors 1 and 2
+  motor1.setSpeed(255); 
+  motor2.setSpeed(255); 
+}
+ 
+void loop()
+{
+  // Activate motor 1 clockwise
+  motor1.run(FORWARD);
+
+  // Activate motor 2 counterclockwise
+  motor2.run(BACKWARD); 
+ 
+  // Wait for 5 seconds
+  delay(5000);
+
+  // Turns off both motors
+  motor1.run(RELEASE); 
+  motor2.run(RELEASE); 
+
+  // Activate motor 1 counterclockwise
+  motor1.run(BACKWARD);
+
+  // Activate motor 2 clockwise
+  motor2.run(FORWARD); 
+ 
+  // Wait for 5 seconds
+  delay(5000);
+  
+  // Turns off both motors
+  motor1.run(RELEASE); 
+  motor2.run(RELEASE);
+}
