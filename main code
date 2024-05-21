@@ -5,7 +5,7 @@
 #define TRIG_PIN A0 
 #define ECHO_PIN A1 
 #define MAX_DISTANCE 200 
-#define MAX_SPEED 190 
+#define MAX_SPEED 120 
 #define MAX_SPEED_OFFSET 20
 
 NewPing sonar(TRIG_PIN, ECHO_PIN, MAX_DISTANCE); 
@@ -27,17 +27,17 @@ void loop() {
 
   if(distance <= 15) {
     moveStop();
-    delay(1000); // Adjust the waiting time as necessary
+    delay(500); // Adjust the waiting time as necessary
 
     // Short reverse
     moveBackward();
-    delay(500); // Adjust the reverse time as necessary
+    delay(250); // Adjust the reverse time as necessary
     moveStop();
-    delay(500); // Adjust the waiting time after reversing as necessary
+    delay(250); // Adjust the waiting time after reversing as necessary
 
     // Turn 90 degrees to the left
     turnLeft();
-    delay(1000); // Adjust the waiting time after rotation as necessary
+    delay(500); // Adjust the waiting time after rotation as necessary
 
     // Continue moving forward
     moveForward();
